@@ -1,0 +1,10 @@
+1-) git repository Olusturuldu ve Clone edildi.
+2-) Express Kuruldu, Express ile iskelet sistemi kuruldu.
+3-) Nodemon Setup for dev.
+4-) Bower Installed.
+5-) Install Angular with bower.
+6-) make bower public from app.js
+7-) connect to angular from Layout.pug
+8-) public and bower_components's connections are tested.
+9-) div(ng-app='chatter', ng-cloak)
+*ng-cloak: kullaniciya veririn ulasmasi icin datanin cekilmesini bekliyor.
