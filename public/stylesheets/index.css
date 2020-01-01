@@ -93,3 +93,16 @@ body .modal .modal__inner .modal__footer a:hover {
 body .modal .modal__inner .modal__footer a.disabled {
   background: #EFEFEF;
 }
+.modal__content{
+  margin-top: 20px;
+}
+.loginInputBox{
+  width: 150px;
+  display: block;
+  padding: 5px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  font-weight: bold;
+}
