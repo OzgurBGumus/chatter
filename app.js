@@ -14,6 +14,8 @@ const chatRouter = require('./routes/chat');
 const passport = require('passport');
 const session = require('express-session');
 
+//middlewares
+const isAuthenticated = require('./middleware/isAuthenticated');
 const app = express();
 const db = require('./helpers/db')();
 // view engine setup
@@ -33,7 +35,7 @@ app.use(session({
   secret: process.env.SESSION_SECRET_KEY,
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: true, maxAge: 14*24*60*60*100}
+  cookie: { maxAge: 14*24*60*60*100}
 }));
 
 //PASSPORT.JS
@@ -42,7 +44,7 @@ app.use(passport.session());
 
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/chat', chatRouter);
+app.use('/chat', isAuthenticated, chatRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res, next) => {
